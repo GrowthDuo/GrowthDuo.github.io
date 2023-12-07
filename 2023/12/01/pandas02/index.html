@@ -7,20 +7,23 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="软件测试的方法和手段  一般的方法和手段  ​		注重从软件本身出发 ​		1、从需求、功能实现、性能等角度发现软件本身的Bug。 ​		2、通过手动或自动化的方式来实现 Bug 的发现。 ​		优点 ： ​			只关注软件本身，工作量不大，比较省心。 ​			缺点： ​				没有预防手段，发现 Bug 时再修补回溯的流程比较长，也就是比较耗时。 ​		（大体意思 ：程序员将代码已经写好了；发现">
+<meta name="description" content="​	 1今天我们来做一个购物车添加的案例，想要添加商品到购物车，我们需要登录用户，这里我们要获取登录的状态，才可以进行添加商品到购物车。这里我们需要了解一个Cookie 和 Session了。  ​	 什么是 cookie​		Cookie 是一些网站为了识别用户和跟踪会话而存储在用户本地终端中的文本数据.一般数据大小不超过4k。    什么是 SessionSession 是指会话控制，是保存在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件测试的方法和手段">
-<meta property="og:url" content="http://example.com/2023/11/26/ceShi_02/index.html">
+<meta property="og:title" content="pandas实现购物车添加02">
+<meta property="og:url" content="http://example.com/2023/12/01/pandas02/index.html">
 <meta property="og:site_name" content="duoduo">
-<meta property="og:description" content="软件测试的方法和手段  一般的方法和手段  ​		注重从软件本身出发 ​		1、从需求、功能实现、性能等角度发现软件本身的Bug。 ​		2、通过手动或自动化的方式来实现 Bug 的发现。 ​		优点 ： ​			只关注软件本身，工作量不大，比较省心。 ​			缺点： ​				没有预防手段，发现 Bug 时再修补回溯的流程比较长，也就是比较耗时。 ​		（大体意思 ：程序员将代码已经写好了；发现">
+<meta property="og:description" content="​	 1今天我们来做一个购物车添加的案例，想要添加商品到购物车，我们需要登录用户，这里我们要获取登录的状态，才可以进行添加商品到购物车。这里我们需要了解一个Cookie 和 Session了。  ​	 什么是 cookie​		Cookie 是一些网站为了识别用户和跟踪会话而存储在用户本地终端中的文本数据.一般数据大小不超过4k。    什么是 SessionSession 是指会话控制，是保存在">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-26T04:23:23.000Z">
-<meta property="article:modified_time" content="2023-11-26T04:25:41.463Z">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2023-12-01T11:20:08.327Z">
+<meta property="article:modified_time" content="2023-12-03T06:49:08.012Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/404.jpg">
 
 
-<title >软件测试的方法和手段</title>
+<title >pandas实现购物车添加02</title>
 
 <!-- Favicon -->
 
@@ -63,7 +66,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"John Doe","root":"/","typed_text":["   Welcome to Doduo Blog!！"],"theme_version":"2.1.8","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"log.svg","icon16":"log.svg","icon32":"log.svg","appleTouchIcon":"log.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":false,"title":"mac","height_limit":200},"toc":{"post_title":false},"covers":["https://tse2-mm.cn.bing.net/th/id/OIP-C.oXAnSYbzVsbSefXPrBrnXwHaEo?w=299&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7","https://tse2-mm.cn.bing.net/th/id/OIP-C.rYoa1aoGGOEFAOmSZ2rMxwHaEK?w=306&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7","https://tse1-mm.cn.bing.net/th/id/OIP-C.ywbRATlid7MvbT9RMV3_PAHaEo?w=316&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7","https://th.bing.com/th/id/OIP.SjKW64OE3fkRJQHjZKLs7AHaEo?w=300&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.rGEQ4KKeoEPNnU7ofmvm3QHaEo?w=292&h=182&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.Tq6zaOLRndcM73hqCL23tgHaEo?w=262&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.fbmVvqcTmK2ByjtyUx03WgHaEo?w=288&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.Wu0wS4p3cLe2UxQWyLqXlQHaEo?w=291&h=182&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.F537cYYpIFdjNTuMHmpSWQHaEK?w=333&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7"]};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-11-26 12:25:41"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-12-03 14:49:08"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.8" id="trm-switch-style">
@@ -407,7 +410,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            软件测试的方法和手段
+                            pandas实现购物车添加02
                         </h1>
 
                         
@@ -522,13 +525,13 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            11/26
+            12/01
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            12:23
+            19:20
         </div>
     </div>
     <div class="col-sm-4">
@@ -540,23 +543,43 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h5>软件测试的方法和手段</h5>
+    <p>​	</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">今天我们来做一个购物车添加的案例，想要添加商品到购物车，我们需要登录用户，这里我们要获取登录的状态，才可以进行添加商品到购物车。这里我们需要了解一个Cookie 和 Session了。</span><br></pre></td></tr></table></figure>
 
-<h6>一般的方法和手段</h6>
+<p>​	</p>
+<h6 id="什么是-cookie"><a href="#什么是-cookie" class="headerlink" title="什么是 cookie"></a>什么是 cookie</h6><p>​		Cookie 是一些网站为了识别用户和跟踪会话而存储在用户本地终端中的文本数据.一般数据大小不超过4k。</p>
+<p><img src="https://pic.imgdb.cn/item/6569c56bc458853aef3391e3.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<hr />
 
-<p>​		<strong>注重从软件本身出发</strong></p>
-<p>​		1、从需求、功能实现、性能等角度发现软件本身的Bug。</p>
-<p>​		2、通过手动或自动化的方式来实现 Bug 的发现。</p>
-<p>​		<strong>优点 ：</strong></p>
-<p>​			只关注软件本身，工作量不大，比较省心。</p>
-<p>​			<strong>缺点：</strong></p>
-<p>​				没有预防手段，发现 Bug 时再修补回溯的流程比较长，也就是比较耗时。</p>
-<p>​		（大体意思 ：程序员将代码已经写好了；发现bug后还得重新改）</p>
-<h6>按照未来的职业发展 的角度来看</h6>	
+<h6 id="什么是-Session"><a href="#什么是-Session" class="headerlink" title="什么是 Session"></a>什么是 Session</h6><p>Session 是指会话控制，是保存在服务器上一种机制，当客户端访问服务器的时候，服务器会把信息以某种形式记录在服务器上，恰恰和 Cookie 相反。</p>
+<p><img src="https://pic.imgdb.cn/item/6569c5bcc458853aef34b112.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>有的网站将购物车信息存储在服务器上，通过SessionID来进行访问。也可以写在数据库中。</p>
+<hr />
 
-<p>​		<strong>应该 ：从项目生命周期的全流程角度进行质量把控</strong></p>
-<p>与一般的软件测试手段不同的是这里更强调预防.</p>
-<p>从项目时间的维度上来看这样做更高效.</p>
+<h6 id="Cookie-和-Session-的区别"><a href="#Cookie-和-Session-的区别" class="headerlink" title="Cookie 和 Session 的区别"></a>Cookie 和 Session 的区别</h6><ol>
+<li>存放位置不同，Cookie放在客户端，Session存放在服务端</li>
+<li>存放位置不同导致安全性不同，用户可以任意分析Cookie，而Session在服务端，用户分析不到</li>
+<li>数据存储大小不同，Cookie数据不能超过4k,Session存放在服务端，没有限制</li>
+<li>性能使用情况不同，当访问过多时Session比较占用服务器资源，而Cookie不会</li>
+</ol>
+<p>​		</p>
+<hr />
+
+<p>​	</p>
+<hr />
+
+<p>​		看完上面我们大致了解到Cookie 和 Session 是用来保存用户的信息的，如登录，大家可以使用开发者工具，登录某个网站，获取一下看看。</p>
+<h6 id="获取Cookie"><a href="#获取Cookie" class="headerlink" title="获取Cookie"></a>获取Cookie</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">新建一个conftest.py文件</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment"># 此文件是获取cooken的</span></span><br><span class="line"><span class="comment"># 这里使用的是fixture的会话级别，都可以使用。autouse是自动运行</span></span><br><span class="line"><span class="meta">@pytest.fixture(<span class="params">scope=<span class="string">&quot;session&quot;</span>, autouse=<span class="literal">True</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_cooken</span>():</span><br><span class="line">    URL = <span class="string">&quot;http://自己的&quot;</span></span><br><span class="line">    home = <span class="string">&#x27;/loginWithJwt&#x27;</span></span><br><span class="line">    login_data = &#123;</span><br><span class="line">        <span class="string">&quot;userName&quot;</span>: <span class="string">&quot;账号&quot;</span>,</span><br><span class="line">        <span class="string">&quot;password&quot;</span>: <span class="string">&quot;密码&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment"># 这里网站使用的是get，但实际中一般使用post。</span></span><br><span class="line">    requests_get = requests.get(URL + home, login_data)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 开始解析，拿到data</span></span><br><span class="line">    data = json.loads(requests_get.text)</span><br><span class="line">    jwt_token = data[<span class="string">&#x27;data&#x27;</span>]</span><br><span class="line">    <span class="comment">#print(jwt_token) 可以先打印一下</span></span><br><span class="line">    <span class="keyword">return</span> jwt_token</span><br></pre></td></tr></table></figure>
+
+<p>​		有了登录的状态，接下来我们要获取接口数据，至于如何获取请看 “pandas遍历_01”。这里我们大致写一下。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">新建一个工具类</span><br><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">shaiXuan</span>(<span class="params">Class</span>):</span><br><span class="line">    <span class="comment"># 显示最大列</span></span><br><span class="line">    pandas.set_option(<span class="string">&#x27;display.max_columns&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">    <span class="comment"># 显示最大行</span></span><br><span class="line">    pandas.set_option(<span class="string">&#x27;display.max_rows&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">    excel = pandas.read_excel(<span class="string">&quot;D:/Software/python/test_api/mumu_api/cases_data/mumu.xlsx&quot;</span>, sheet_name=<span class="string">&quot;Sheet1&quot;</span>) <span class="comment"># 可以使用相对路径</span></span><br><span class="line">    <span class="comment"># print(excel)</span></span><br><span class="line">    ok = excel[excel[<span class="string">&quot;class&quot;</span>] == Class]  <span class="comment"># 这里我是根据类型判断，如登录，购物车等</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 遍历</span></span><br><span class="line">    list1 = []</span><br><span class="line">    <span class="comment"># 打印的是行数</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> ok.index:</span><br><span class="line">        <span class="comment"># 每循环一次创建一个字典</span></span><br><span class="line">        dict1 = &#123;&#125;</span><br><span class="line">        <span class="comment"># 将行数作为列名，打印的是列名</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> ok.loc[[i]]:</span><br><span class="line">            dict1[j] = ok[j][i]</span><br><span class="line">        list1.append(dict1)</span><br><span class="line">    <span class="built_in">print</span>(list1)</span><br><span class="line">    <span class="comment"># print(type(list1))</span></span><br><span class="line">    <span class="keyword">return</span> list1</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">   shaiXuan(<span class="string">&quot;添加商品到购物车&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​		接下来解释我们的测试类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">from</span> config.const <span class="keyword">import</span> URL</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> utils.mysql_utils <span class="keyword">as</span> um</span><br><span class="line"><span class="keyword">import</span> utils.excel_utils <span class="keyword">as</span> ue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于登录的信息还有cooke</span></span><br><span class="line"><span class="meta">@pytest.fixture()</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_token</span>(<span class="params">test_get_login_token</span>):</span><br><span class="line">    <span class="keyword">return</span> test_get_login_token</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用于筛选类</span></span><br><span class="line"><span class="meta">@pytest.fixture()</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_params</span>():</span><br><span class="line">    <span class="keyword">return</span> ue.get_excel_case_pandas(<span class="string">&quot;购物车&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将上面两个fixture当作参数传入</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_add_cart</span>(<span class="params">get_token, get_params</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    购物车添加商品</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 获取筛选好的数据</span></span><br><span class="line">    params = get_params</span><br><span class="line">    <span class="comment"># 获取token及登录的信息</span></span><br><span class="line">    jwt_token = get_token</span><br><span class="line">    <span class="comment"># print(params)</span></span><br><span class="line">    <span class="comment"># print(type(params))</span></span><br><span class="line">    <span class="comment"># 遍历</span></span><br><span class="line">    <span class="keyword">for</span> requests_data <span class="keyword">in</span> params:</span><br><span class="line">        <span class="comment">#print(requests_data)</span></span><br><span class="line">        <span class="built_in">id</span> = requests_data[<span class="string">&quot;id&quot;</span>]</span><br><span class="line">        title = requests_data[<span class="string">&quot;title&quot;</span>]</span><br><span class="line">        Class = requests_data[<span class="string">&quot;class&quot;</span>]</span><br><span class="line">        home = requests_data[<span class="string">&quot;home&quot;</span>]</span><br><span class="line">        mode = requests_data[<span class="string">&quot;mode&quot;</span>]</span><br><span class="line">        login = requests_data[<span class="string">&quot;login&quot;</span>]</span><br><span class="line">        readData = requests_data[<span class="string">&quot;readData&quot;</span>]</span><br><span class="line">        dataFormat = requests_data[<span class="string">&quot;dataFormat&quot;</span>]</span><br><span class="line">        ExpectedResults = requests_data[<span class="string">&quot;ExpectedResults&quot;</span>]</span><br><span class="line">        <span class="comment"># print(id)</span></span><br><span class="line">        <span class="comment"># print(title)</span></span><br><span class="line">        <span class="comment"># print(Class)</span></span><br><span class="line">        <span class="comment"># print(home)</span></span><br><span class="line">        <span class="comment"># print(mode)</span></span><br><span class="line">        </span><br><span class="line">	 headers = &#123;</span><br><span class="line">            <span class="string">&quot;jwt_token&quot;</span>: jwt_token</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment"># requests_post = requests.post(URL + uri, data=input_data, headers=headers)</span></span><br><span class="line">        <span class="comment"># print(requests_post.text)</span></span><br><span class="line">        <span class="comment"># print(headers)</span></span><br><span class="line">        <span class="comment"># 如果需要登录</span></span><br><span class="line">        <span class="keyword">if</span> if_login == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> method == <span class="string">&quot;get&quot;</span>:</span><br><span class="line">                response = requests.get(URL+uri,</span><br><span class="line">                                  json.loads(input_data),</span><br><span class="line">                                        headers=headers)</span><br><span class="line">                <span class="keyword">assert</span> <span class="number">200</span> == response.status_code</span><br><span class="line"></span><br><span class="line">            <span class="keyword">elif</span> method == <span class="string">&quot;post&quot;</span>:</span><br><span class="line">                <span class="keyword">if</span> data_type == <span class="string">&quot;form&quot;</span>:</span><br><span class="line">                    response = requests.post(URL+uri,</span><br><span class="line">                                             data=json.loads(input_data),</span><br><span class="line">                                             headers=headers)</span><br><span class="line">                    <span class="built_in">print</span>(response.text)</span><br><span class="line">                    <span class="keyword">assert</span> <span class="number">200</span> == response.status_code</span><br><span class="line">                    <span class="comment"># assert request_data[&#x27;预期结果&#x27;] == json.loads(response.text)[&#x27;status&#x27;]</span></span><br><span class="line">                <span class="keyword">elif</span> data_type == <span class="string">&quot;json&quot;</span>:</span><br><span class="line">                    response = requests.post(URL+uri, json=json.loads(input_data), headers=headers)</span><br><span class="line">                    <span class="keyword">assert</span> <span class="number">200</span> == response.status_code</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​		接下来运行测试就可以了，打开网站，刷新购物车会出现你添加的商品。</p>
 
 </article>
     
@@ -591,41 +614,10 @@
         </h5>
     </div>
     
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/12/01/pandas02/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <div class="trm-cover-img" data-random-img></div>
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E8%BF%9B%E9%98%B6/">
-                    进阶
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/12/01/pandas02/" class="trm-anima-link">
-                    pandas实现购物车添加02
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/12/01</li>
-                <li>19:20</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/11/24/ceShi_01/" class="trm-cover-frame trm-anima-link">
+        <a href="/2023/11/26/ceShi_02/" class="trm-cover-frame trm-anima-link">
             
             
                 <div class="trm-cover-img" data-random-img></div>
@@ -639,14 +631,14 @@
                 </a>
             </div>
             <h5>
-                <a href="/2023/11/24/ceShi_01/" class="trm-anima-link">
-                    初次接触测试01
+                <a href="/2023/11/26/ceShi_02/" class="trm-anima-link">
+                    软件测试的方法和手段
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>23/11/24</li>
-                <li>21:44</li>
+                <li>23/11/26</li>
+                <li>12:23</li>
                 
                 
             </ul>
