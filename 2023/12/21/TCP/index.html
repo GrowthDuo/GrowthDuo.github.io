@@ -7,22 +7,23 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="验证码识别  我们在使用selenium自动化时，时常会遇见验证码，那么对于验证码我们程序应该怎么操作呢？  去掉验证码 去掉验证码，直接通过用户名和密码登陆网站。  设置万能码   设置万能码，就是不管什么情况，输入万能码，都可以成功登录网站。  验证码识别技术   调用第三方接口，但是大多数是收费的，但如果是简单的验证码码我们可以使用以下方法：   安装 tesseract ,  py">
+<meta name="description" content="前几天在刷B站中，无意中看到为一位up主在将tcp协议，点入一看感觉讲的十分不错，视频连接我将放在文章下方。    什么是TCP协议1答 ：传输层协议    12345特点 ：Tcp 协议与UDP 协议都是传输层协议，TCP 协议更可靠TCP 协议， 连接（三次握手），断开连接（四次挥手）    术语 SYN : 同步位       SYN &#x3D; 1, 表示进行一个连接请求 ACK">
 <meta property="og:type" content="article">
-<meta property="og:title" content="识别验证码">
-<meta property="og:url" content="http://example.com/2023/12/16/yanZhengMa/index.html">
+<meta property="og:title" content="TCP协议">
+<meta property="og:url" content="http://example.com/2023/12/21/TCP/index.html">
 <meta property="og:site_name" content="duoduo">
-<meta property="og:description" content="验证码识别  我们在使用selenium自动化时，时常会遇见验证码，那么对于验证码我们程序应该怎么操作呢？  去掉验证码 去掉验证码，直接通过用户名和密码登陆网站。  设置万能码   设置万能码，就是不管什么情况，输入万能码，都可以成功登录网站。  验证码识别技术   调用第三方接口，但是大多数是收费的，但如果是简单的验证码码我们可以使用以下方法：   安装 tesseract ,  py">
+<meta property="og:description" content="前几天在刷B站中，无意中看到为一位up主在将tcp协议，点入一看感觉讲的十分不错，视频连接我将放在文章下方。    什么是TCP协议1答 ：传输层协议    12345特点 ：Tcp 协议与UDP 协议都是传输层协议，TCP 协议更可靠TCP 协议， 连接（三次握手），断开连接（四次挥手）    术语 SYN : 同步位       SYN &#x3D; 1, 表示进行一个连接请求 ACK">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/404.jpg">
-<meta property="article:published_time" content="2023-12-16T11:19:55.814Z">
-<meta property="article:modified_time" content="2023-12-16T11:59:46.275Z">
+<meta property="og:image" content="http://example.com/img/404.jpg">
+<meta property="article:published_time" content="2023-12-21T07:39:54.720Z">
+<meta property="article:modified_time" content="2023-12-21T07:58:06.562Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/img/404.jpg">
 
 
-<title >识别验证码</title>
+<title >TCP协议</title>
 
 <!-- Favicon -->
 
@@ -65,7 +66,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"John Doe","root":"/","typed_text":["   Welcome to Doduo Blog!！"],"theme_version":"2.1.8","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"log.svg","icon16":"log.svg","icon32":"log.svg","appleTouchIcon":"log.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":false,"title":"mac","height_limit":200},"toc":{"post_title":false},"covers":["https://tse2-mm.cn.bing.net/th/id/OIP-C.oXAnSYbzVsbSefXPrBrnXwHaEo?w=299&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7","https://tse2-mm.cn.bing.net/th/id/OIP-C.rYoa1aoGGOEFAOmSZ2rMxwHaEK?w=306&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7","https://tse1-mm.cn.bing.net/th/id/OIP-C.ywbRATlid7MvbT9RMV3_PAHaEo?w=316&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7","https://th.bing.com/th/id/OIP.SjKW64OE3fkRJQHjZKLs7AHaEo?w=300&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.rGEQ4KKeoEPNnU7ofmvm3QHaEo?w=292&h=182&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.Tq6zaOLRndcM73hqCL23tgHaEo?w=262&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.fbmVvqcTmK2ByjtyUx03WgHaEo?w=288&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.Wu0wS4p3cLe2UxQWyLqXlQHaEo?w=291&h=182&c=7&r=0&o=5&dpr=1.5&pid=1.7","https://th.bing.com/th/id/OIP.F537cYYpIFdjNTuMHmpSWQHaEK?w=333&h=187&c=7&r=0&o=5&dpr=1.5&pid=1.7"]};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-12-16 19:59:46"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2023-12-21 15:58:06"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.8" id="trm-switch-style">
@@ -415,7 +416,7 @@
                             NEWS LETTER
                         </div>
                         <h1 class="trm-mb-30 trm-hsmb-font">
-                            识别验证码
+                            TCP协议
                         </h1>
 
                         
@@ -530,13 +531,13 @@
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
-            12/16
+            12/21
         </div>
     </div>
     <div class="col-sm-4">
         <div class="trm-card trm-label trm-label-light text-center">
             <i class="iconfont far fa-clock trm-icon"></i><br>
-            19:19
+            15:39
         </div>
     </div>
     <div class="col-sm-4">
@@ -552,41 +553,32 @@
 
 <br />
 
-<h5>验证码识别</h5>
+<p>前几天在刷B站中，无意中看到为一位up主在将tcp协议，点入一看感觉讲的十分不错，视频连接我将放在文章下方。
 
-<p>我们在使用selenium自动化时，时常会遇见验证码，那么对于验证码我们程序应该怎么操作呢？</p>
-<ol>
-<li><p><strong>去掉验证码</strong></p>
-<p>去掉验证码，直接通过用户名和密码登陆网站。</p>
-</li>
-<li><p><strong>设置万能码</strong></p>
-</li>
-</ol>
-<p>设置万能码，就是不管什么情况，输入万能码，都可以成功登录网站。</p>
-<ol start="3">
-<li><strong>验证码识别技术</strong></li>
-</ol>
-<ul>
-<li><p>调用第三方接口，但是大多数是收费的，但如果是简单的验证码码我们可以使用以下方法：</p>
-</li>
-<li><ol>
-<li><p>安装 tesseract ,  pytesseract 是google的tesseract的一个python版本的接口库，想要真正使用就要先安装tesseract ，推荐 去这位网址下载 【<a target="_blank" rel="noopener" href="https://github.com/UB-Mannheim/tesseract/wiki">Home · UB-Mannheim&#x2F;tesseract Wiki (github.com)</a>】</p>
-</li>
-<li><p>下载完成后，配置path然后使用cmd输入 “tesseract  -v” 后如果显示版本信息说明已配置完成。</p>
-</li>
-<li><p>另外需要安装一下<strong>Pillow库</strong>，用于图像处理。</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install Pillow </span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
+<br />
+
+<h4 id="什么是TCP协议"><a href="#什么是TCP协议" class="headerlink" title="什么是TCP协议"></a>什么是TCP协议</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">答 ：传输层协议</span><br></pre></td></tr></table></figure>
+
+<br />
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">特点 ：</span><br><span class="line">Tcp 协议与UDP 协议都是传输层协议，</span><br><span class="line">TCP 协议更可靠</span><br><span class="line"></span><br><span class="line">TCP 协议， 连接（三次握手），断开连接（四次挥手）</span><br></pre></td></tr></table></figure>
+
+<br />
+
+<h3 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h3><ul>
+<li>SYN : 同步位       SYN &#x3D; 1, 表示进行一个连接请求</li>
+<li>ACK : 确认位       ACK &#x3D; 1, 确认有效		 ACK &#x3D; 0, 确认无效</li>
+<li>ack  : 确认号       对方发送序列号 + 1</li>
+<li>seq  : 序号（随机的）</li>
+<li>FIN  : FIN &#x3D;1, 表示断开连接，并且客户端会停止向服务端发送数据</li>
 </ul>
-<p>​					4. 找到pytesseract.py文件，将tesseract_cmd修改为自己<strong>安装tesseract.exe 的路径</strong></p>
-<p><img src="https://pic.imgdb.cn/item/657d9123c458853aef456036.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
-<p>完成以上操作后就可以开始写代码了，这里我直接演示识别代码内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入PIL库中的Image模块</span></span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入pytesseract库</span></span><br><span class="line"><span class="keyword">import</span> pytesseract</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过PIL库的Image模块打开指定路径的图片文件，并将图片内容转化为字符串</span></span><br><span class="line">string = pytesseract.image_to_string(Image.<span class="built_in">open</span>(<span class="string">&quot;img.png&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印输出图片内容的字符串形式</span></span><br><span class="line"><span class="built_in">print</span>(string)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<br />
 
+<h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p><img src="https://pic.imgdb.cn/item/6583eee5c458853aefe5be32.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<br />
 
-
-
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><p><img src="https://pic.imgdb.cn/item/6583ef18c458853aefe65801.png" loading="lazy" onerror='this.onerror=null;this.src="/img/404.jpg"'></p>
+<p>大家如果看不起图片，请访问 【[TCP 传输层协议 (yuque.com)](https://www.yuque.com/duoduo-ex4fl/arwkk6/uxyo2m0udg581uue)】，**up主（doubleyong）视频链接** 【[TCP协议三次握手与四次挥手_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1at4y1Q77b/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=61a8ee86e65fe9c687841f6936393d11)】</p>
 
 
 </article>
@@ -624,39 +616,7 @@
     
         <div class="col-lg-6">
     <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/12/21/TCP/" class="trm-cover-frame trm-anima-link">
-            
-            
-                <div class="trm-cover-img" data-random-img></div>
-            
-        </a>
-        
-        <div class="trm-card-descr">
-            <div class="trm-label trm-category trm-mb-20">
-                <a href=" /categories/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
-                    测试基础
-                </a>
-            </div>
-            <h5>
-                <a href="/2023/12/21/TCP/" class="trm-anima-link">
-                    TCP协议
-                </a>
-            </h5>
-            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
-            <ul class="trm-card-data trm-label">
-                <li>23/12/21</li>
-                <li>15:39</li>
-                
-                
-            </ul>
-        </div>
-    </div>
-</div>
-    
-    
-        <div class="col-lg-6">
-    <div class="trm-blog-card trm-scroll-animation">
-        <a href="/2023/12/01/pandas02/" class="trm-cover-frame trm-anima-link">
+        <a href="/2023/12/21/jianKong/" class="trm-cover-frame trm-anima-link">
             
             
                 <div class="trm-cover-img" data-random-img></div>
@@ -670,14 +630,46 @@
                 </a>
             </div>
             <h5>
-                <a href="/2023/12/01/pandas02/" class="trm-anima-link">
-                    pandas实现购物车添加02
+                <a href="/2023/12/21/jianKong/" class="trm-anima-link">
+                    常用Linux服务器监控命令及其用法
                 </a>
             </h5>
             <div class="trm-divider trm-mb-20 trm-mt-20"></div>
             <ul class="trm-card-data trm-label">
-                <li>23/12/01</li>
-                <li>19:20</li>
+                <li>23/12/21</li>
+                <li>19:29</li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/12/16/yanZhengMa/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <div class="trm-cover-img" data-random-img></div>
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+                    测试基础
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/12/16/yanZhengMa/" class="trm-anima-link">
+                    识别验证码
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/12/16</li>
+                <li>19:19</li>
                 
                 
             </ul>
@@ -716,8 +708,24 @@
 
             
 
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+				<span id="post-toc-top">
+					置顶
+				</span>
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-3" title="术语"><a rel="nofollow" class="trm-toc-link" href="#术语"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">术语</span></a></li></ol>
+      </div>
+    </div>
+
             
 <div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
     
     
         <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
